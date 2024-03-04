@@ -5,7 +5,7 @@ SELECT S.`id`, S.`name`, S.`surname`, D.`name` FROM `students` AS S JOIN `degree
 SELECT DEG.`id`, DEG.`name`, DEP.`name` FROM `degrees` AS DEG JOIN `departments` AS DEP ON DEP.`id` = DEG.`department_id` WHERE DEP.`name` = 'Dipartimento di Neuroscienze';
 
 -- 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
-
+SELECT T.`id`, T.`name`, T.`surname`, C.`name` FROM `course_teacher` AS CT JOIN `teachers` AS T ON T.`id` = CT.`teacher_id` JOIN `courses` AS C ON C.`id` = CT.`course_id` WHERE T.`surname` = 'Amato' AND T.`name` = 'Fulvio';
 
 -- 4. Selezionare tutti gli studenti con i dati relativi al corso di laurea a cui sono iscritti e il relativo dipartimento, in ordine alfabetico per cognome e nome
 
